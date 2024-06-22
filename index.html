@@ -193,7 +193,7 @@
           method: 'GET'
         };
 
-	performRestCall(apiUrl, requestOptions, uiUpdateFunc);
+	    performRestCall(apiUrl, requestOptions, uiUpdateFunc);
     }
 
     function performPostTodoItem(description, uiUpdateFunc) {
@@ -226,7 +226,7 @@
           body: JSON.stringify(data)
         };
 	
-	performRestCall(apiUrl + "/" + id, requestOptions, uiUpdateFunc);
+	    performRestCall(apiUrl + "/" + id, requestOptions, uiUpdateFunc);
     }
 
     function performDeleteTodoItem(id, uiUpdateFunc) {
@@ -234,7 +234,7 @@
           method: 'DELETE'
         };
 
-	performRestCall(apiUrl + "/" + id, requestOptions, uiUpdateFunc);
+	    performRestCall(apiUrl + "/" + id, requestOptions, uiUpdateFunc);
     }
 
     function performRestCall(url, requestOptions, callback) {

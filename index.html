@@ -135,7 +135,7 @@
       if (ev.target.tagName === 'LI') {
         performPatchTodoItem(ev.target.id, !ev.target.classList.contains('checked'), function(data) {
           ev.target.classList.toggle('checked')
-	});
+	      });
       }
     }, false);
 
@@ -153,11 +153,11 @@
 
     function loadTodoListView() {
       performGetTodoItems(function(data) {
-          eraseListView();
-          for(let i = 0; i < data.length; i++) {
-            let todoItem = data[i];
-            addTodoItemToListView(todoItem.Id, todoItem.Description, todoItem.IsComplete);
-          }
+        eraseListView();
+        for(let i = 0; i < data.length; i++) {
+          let todoItem = data[i];
+          addTodoItemToListView(todoItem.Id, todoItem.Description, todoItem.IsComplete);
+        }
       });
     }
 
@@ -189,9 +189,9 @@
     }
 
     function performGetTodoItems(uiUpdateFunc) {
-        const requestOptions = {
-          method: 'GET'
-        };
+      const requestOptions = {
+        method: 'GET'
+      };
 
 	    performRestCall(apiUrl, requestOptions, uiUpdateFunc);
     }
@@ -214,17 +214,17 @@
     }
 
     function performPatchTodoItem(id, isComplete, uiUpdateFunc) {
-	const data = {
-	  IsComplete: isComplete
-        }
+	    const data = {
+	      IsComplete: isComplete
+      }
 
-        const requestOptions = {
-          method: 'PATCH',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data)
-        };
+      const requestOptions = {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+      };
 	
 	    performRestCall(apiUrl + "/" + id, requestOptions, uiUpdateFunc);
     }
